@@ -8,7 +8,7 @@ import os, sys, re
 colorama.init()
 
 cashCurrencies= {
-"USD" : "/html/body/div[4]/div/div[3]/div[2]/div[2]/button[1]",
+"USD" : "/html/body/div[7]/div/div[3]/div[2]/div[2]/button[1]",
 "ARS" : "/html/body/div[4]/div/div[3]/div[2]/div[2]/button[2]",
 "AED" : "/html/body/div[4]/div/div[3]/div[2]/div[2]/button[3]",
 "AUD" : "/html/body/div[4]/div/div[3]/div[2]/div[2]/button[4]",
@@ -122,6 +122,7 @@ chrome_options = Options()
 #workingDir = os.getcwd()#Get Working directory
 #os.system(f"cmd /c set PATH=%PATH%;{workingDir}")
 #Edit Path: set PATH=%PATH%;%FOO%
+
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
@@ -138,11 +139,11 @@ print(Fore.GREEN + "Connected To Binance.com" + Style.RESET_ALL)
 sleep(3)
 if(not(perfCurrency == "usd")):
     try:
-        driver.find_element_by_xpath('/html/body/div[1]/div/header/div[4]/div[2]/div[2]').click()#Click Currency Selector
+        driver.find_element_by_xpath('/html/body/div[1]/div/header/div[5]/div[2]/div').click()#Click Currency Selector
         
     except:
         sleep(2)
-        driver.find_element_by_xpath('/html/body/div[1]/div/header/div[4]/div[2]/div[2]').click()#Click Currency Selector
+        driver.find_element_by_xpath('/html/body/div[1]/div/header/div[5]/div[2]/div').click()#Click Currency Selector
 
 sleep(2)
 
